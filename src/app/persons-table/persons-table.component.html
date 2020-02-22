@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 title">
+      <h2>Cardcom Task - Gad Dahan</h2>
+    </div>
+  </div>
+  <hr>
+  <add-person-panel (addPersonEvent)="addPersonRecordToTable($event)"></add-person-panel>
+  <hr>
+  <div class="filter-toggle" (click)="toggleFilterPanel()"[ngClass]="isFilterOpened ? 'filter-icon-opened' : 'filter-icon-closed'">Filter</div>
+  <div class="filter-wrapper" *ngIf="isFilterOpened">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>Search:</label>
+        <input type="text" placeholder="Insert search term" (keyup)=filterOnSearch($event.target.value)>
+        <label>Results per page:</label>
+        <select [value]='20' (change)="updateResultsPerPage($event.target.value)">          
+          <option value='20'>20</option>
+          <option>50</option>
+          <option>100</option>
+        </select>
+        <label>Sort By:</label>
+        <select [value]='name' (change)="sortTableBy($event.target.value)">          
+          <option value='Name'>Name</option>
+          <option value='Birthday'>Date of Birth</option>
+          <option value='Gender'>Gender</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+  <div class="error-alert" *ngIf="showErrorMessage">
+    <h6>The attempted operation failed! Try again later</h6>
+  </div>
+  <div class="success-alert" *ngIf="showSuccessAlert">
+    <h6>Operation completed successfully!</h6>
+  </div>
+  <div class="table-wrapper">
+    <table class="persons-table">
+      <tr>
+        <th *ngFor="let header of tableHeaders">{{header}}</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let person of filteredArray; let i=index" [ngClass]="(i % 2 == 0) ? 'tr-even' : 'tr-odd'">
+          <td>{{person.id}}</td>
+          <td>{{person.name}}</td>
+          <td>{{person.email}}</td>
+          <td>{{person.dateOfBirth}}</td>
+          <td>{{person.gender}}</td>
+          <td>{{person.phone}}</td>
+          <td>
+            <img class="edit-btn" src="assets/images/edit-icon.png" (click)="onEditPerson(person, i)">
+            <img class="delete-btn" src="assets/images/delet-icon.png" (click)="onDeletePerson(person, i)">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="prev-next-buttons-wrapper">
+    <button class="prev-next-btn" (click)="onPrevClick()" *ngIf="currentPage > 1"><img src="assets/images/prev-icon.png"><span>Previous</span></button>
+    <button class="prev-next-btn" (click)="onNextClick()" *ngIf="personsArray.length > resultsPerPage && (resultsPerPage * currentPage) < personsArray.length">Next<span><img src="assets/images/next-icon.png"></span></button>
+  </div>
+</div>
+
+<edit-person-modal *ngIf="isEditModalOpened" [personToEdit]="personSelected"
+ (modalEmitter)="onModalEmitEvent($event)"
+ ></edit-person-modal>

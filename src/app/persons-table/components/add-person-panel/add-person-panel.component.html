@@ -1,0 +1,51 @@
+<div class="new-input-panel">
+  <form [formGroup]="newPersonRecordForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-4">
+            <label>ID*</label>
+            <input type="text" placeholder="Insert id" formControlName="personId">
+          </div>
+          <div class="col-sm-4">
+            <label>Name*</label>
+            <input type="text" placeholder="Insert name" formControlName="personName">
+          </div>
+          <div class="col-sm-4">
+            <label>Email*</label>
+            <input type="text" placeholder="Insert email" formControlName="personEmail">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <label>Date of Birth</label>
+            <input type="date" formControlName="personDateOfBirth">
+          </div>
+          <div class="col-sm-4">
+            <label>Phone</label>
+            <input type="text" placeholder="Insert phone number" formControlName="personPhoneNumber">
+          </div>
+          <div class="col-sm-4">
+            <label>Gender</label>
+            <select formControlName="personGender" [value]='1'>   
+              <option value='1'>Select Gender</option>          
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="row">
+          <div class="col-sm-12 button-wrapper">
+            <button name="add" class="add-btn" type="submit">Add</button>
+            <button name="clear" class="clear-btn" type="submit">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+</div>

@@ -1,0 +1,174 @@
+
+
+.title {
+    text-align: center; 
+    margin-top: 2em;
+}
+
+.persons-table {
+    width: 100%;
+    margin-top: 1.5em;
+}
+
+/***** Filter part start *****/
+input, label {
+    display:inline;
+}
+
+.filter-toggle {
+    margin-top: 2em;
+    color: #5cf1d5;
+    margin-bottom: 1em;
+}
+
+.filter-toggle:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.filter-icon-closed {
+    background-image: url(../../assets/images/filter-plus-icon.png);
+    background-size: 0.75%;
+    background-repeat: no-repeat;
+    background-position-x: 3.5%;
+    background-position-y: 56%;
+    
+}
+
+.filter-icon-opened {
+    background-image: url(../../assets/images/filter-minus-icon.png);
+    background-size: 0.75%;
+    background-repeat: no-repeat;
+    background-position-x: 3.5%;
+    background-position-y: 56%;
+}
+
+.filter-wrapper label {
+    margin-bottom: 0;
+    margin-right: 0.5em;
+}
+
+.filter-wrapper input, .filter-wrapper select {
+    height: 2.25em;
+    border-radius: 5px;
+    padding-left: 0.5em;
+    margin-right: 2em;
+    width: 25%;
+    background-color: #f3f3f3;
+    border:1px solid #cecece;
+    transition: 0.3s;
+}
+
+.filter-wrapper select {
+    height: 2.25em;
+    border-radius: 5px;
+    padding-left: 0.5em;
+    width: 15%;
+    background-color: #f3f3f3;
+    border:1px solid #cecece;
+    transition: 0.3s;
+}
+
+.filter-wrapper input:focus, .filter-wrapper select:focus {
+    outline: none;
+    border: 1px solid #5cf1d5;
+    background-color: #fff;
+    transition: 0.3s;
+    background-image: url();
+}
+
+/***** Filter part end *****/
+
+.persons-table th {
+    text-align: center;
+    vertical-align: middle;
+    height: 3.25em;
+    background-color: #333333;
+    color: #fff;
+    font-weight: normal;    
+    font-size: 1em;
+    position: sticky; 
+    top: 0;
+}
+
+tr td {
+    text-align: center;
+    height: 45px;
+    color: #424242;
+    font-size: 1em;
+}
+
+
+.tr-even {
+    background-color: #f6f6f6;
+    transition: 0.3s;
+}
+
+.tr-odd {
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+.tr-odd:hover, .tr-even:hover {
+    background-color: #98ddd0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+.edit-btn, .delete-btn {
+    width: 1.25em;
+    height: auto;
+    margin: 0 0.75em;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    cursor: pointer;
+}
+
+.error-alert {
+    color: red; 
+    margin-top: 0.5em;   
+}
+
+.success-alert {
+    color: #37e937; 
+    margin-top: 0.5em;   
+}
+
+.error-alert h6, .success-alert h6 {
+    font-size: 1.1em;
+}
+
+/* prev and next buttons */
+.prev-next-buttons-wrapper {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.prev-next-buttons-wrapper .prev-next-btn {
+    margin: 0 1em;
+    border: none;
+    border-radius: 5px;
+    width: 8em;
+    height: 2.5em;
+    background-color: #5cf1d5;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.prev-next-buttons-wrapper .prev-next-btn:hover {
+    background-color: #1fffd6;
+    transition: 0.3s;
+    cursor: pointer;   
+    text-decoration: underline;
+}
+
+.prev-next-btn img {
+    width: 0.4em;
+    height: auto;
+    margin-left: 3px;
+    margin-right: 3px;
+}

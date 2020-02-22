@@ -1,0 +1,90 @@
+
+input, label {
+    display:block;
+}
+
+.new-input-panel label {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.new-input-panel input, .new-input-panel select {
+    height: 2.25em;
+    border-radius: 5px;
+    padding-left: 0.5em;
+    width: 95%;
+    background-color: #f3f3f3;
+    border:1px solid #cecece;
+    transition: 0.3s;
+}
+
+.new-input-panel input:focus, .new-input-panel select:focus {
+    outline: none;
+    border: 1px solid #5cf1d5;
+    background-color: #fff;
+    transition: 0.3s;
+    background-image: url();
+}
+
+input.ng-invalid.ng-dirty {
+    border: 1px solid red !important;
+    background-image: url(../../../../assets/images/alert-icon.png) !important;
+    background-position: right;
+    background-position-x: 95%;
+    transition: 0.3s;
+    background-size: 8%;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+input.ng-valid.ng-dirty {
+    border: 1px solid #52e752 !important;
+    background-image: url(../../../../assets/images/v-icon.png) !important;
+    background-position: right;
+    background-position-x: 95%;
+    transition: 0.3s;
+    background-size: 8%;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-input-panel .add-btn {
+    margin-top: 1.6em;
+    height: 4.76em;
+    width: 4.76em;
+    border: none;
+    background-color: #5cf1d5;
+    color: #fff;
+    font-size: 1.5em;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.new-input-panel .clear-btn {
+    margin-top: 1.6em;
+    height: 4.76em;
+    width: 4.76em;
+    border: none;
+    background-color: #cfcccc;
+    color: #fff;
+    font-size: 1.5em;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.new-input-panel .add-btn:hover {
+    cursor: pointer;
+    background-color: #1fffd6;
+    transition: 0.3s;
+}
+
+.new-input-panel .clear-btn:hover {
+    cursor: pointer;
+    background-color: #acacac;
+    transition: 0.3s;
+}
